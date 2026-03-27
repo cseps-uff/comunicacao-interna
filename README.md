@@ -34,3 +34,20 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+# comunicacao-interna
+Projeto de criação de uma ferramenta de comunicação interna para o capítulo IEEE CS &amp; EPS UFF
+
+## Como clonar o projeto
+
+Para clonar o projeto em sua máquina, execute o seguinte comando:
+
+```bash
+git clone https://github.com/cseps-uff/comunicacao-interna.git
+```
+
+Após clonar, acesse o diretório do projeto:
+
+```bash
+cd comunicacao-interna
+```
