@@ -14,5 +14,3 @@ Após clonar, acesse o diretório do projeto:
 ```bash
 cd comunicacao-interna
 ```
-
-handerson
