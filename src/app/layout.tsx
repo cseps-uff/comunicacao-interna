@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Footer } from "./Components/footer/footer";
-
+import { Header } from "./Components/header";
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -9,7 +9,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br" className={`antialiased`}>
       <body className="min-h-full flex flex-col">
-
+        <Header/>
         {children}
         <Footer/>{/* Toda página vai renderizar o footer dps do final dela */}
 
