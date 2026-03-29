@@ -7,7 +7,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br" className={`antialiased`}>
+    <html lang="pt-BR" className={`antialiased`}>
       <body className="min-h-full flex flex-col">
         <Header/>
         {children}
