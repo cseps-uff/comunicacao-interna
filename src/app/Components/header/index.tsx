@@ -15,8 +15,13 @@ export function Header(){
                             </Link>
                         </li>
                         <li>
-                            <Link href="/NovaRota">
-                                NovaRota
+                            <Link href="/Login">
+                                Login
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/Calendar">
+                                Calendario
                             </Link>
                         </li>
                     </ul>

@@ -5,10 +5,8 @@ export const metadata: Metadata = {
   description: "Página inicial",
 }
 
-export default function Home(){
+export default function Login(){
   return(
-    <div>
-      <h1>Isso é uma h1</h1>
-    </div>
+    <h1>Home</h1>
   )
 }
