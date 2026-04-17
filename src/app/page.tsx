@@ -8,9 +8,12 @@ export default function TaskMasterApp() {
 
   return (
     <>
+
+
       {/* Header */}
+      {/*============================================*/}
       <header className="topbar">
-        <div className="logo">TaskMaster</div>
+        <div className="logo">ComunicaIEEE</div>
         <nav className="nav-links">
           <a
             href="#"
@@ -38,27 +41,38 @@ export default function TaskMasterApp() {
           <div className="avatar">U</div>
         </div>
       </header>
+      {/*============================================*/}
+
+
 
       {/* Layout Principal */}
+      {/*============================================*/}
       <div className="main-layout">
         {/* Sidebar */}
         <aside className="sidebar">
           <h3>Spaces</h3>
           <ul className="space-list">
-            <li>🚀 Desenvolvimento</li>
-            <li>🎨 Design</li>
-            <li>📢 Marketing</li>
+            <li>🗓️ Calendário geral</li>
+            <li>📝 Tarefas geral</li>
+            <li>🪟 Pessoas</li>
+            <li>😁 Só adicionar uma li que aparece aqui embaixo</li>
           </ul>
         </aside>
+        {/*============================================*/}
+
 
         {/* Conteúdo Principal */}
+        {/*============================================*/}
         <main className="content">
           {/* Renderização Condicional: O React só mostra a section se ela for o state ativo */}
           
           {activeView === "home-view" && (
             <section className="view-section active-view">
-              <h1>Bem-vindo ao TaskMaster</h1>
-              <p>Selecione uma área no menu superior ou lateral para começar a organizar seus projetos.</p>
+              <h1>Bem-vindo ao ComunicaIEE</h1>
+              <br/>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolorem. Aliquid, cumque? Magnam non consequuntur repellendus quod explicabo maxime omnis amet eos esse iste. Suscipit ex fugit nesciunt quam tempora?</p>
+              <br/>
+              <p>Aqui devem aparecer as últimas coisas que aconteceram, tipo na home do github.</p>
             </section>
           )}
 
@@ -92,12 +106,16 @@ export default function TaskMasterApp() {
           )}
         </main>
       </div>
+      {/*============================================*/}
+      {/* essa div é enorme, inclui tudo que é do menu principal */}
+
 
       {/* Footer */}
+      {/*============================================*/}
       <footer className="footer">
         <div className="footer-info">
-          <p>&copy; 2026 TaskMaster Inc. Todos os direitos reservados.</p>
-          <p>Contato: suporte@taskmaster.com | +55 (11) 99999-9999</p>
+          <p>&copy; 2026 Projeto de Comunicação Interna CS-EPS UFF. </p>
+          <p>Contato: @oisacazevedo | +55 (21) 99999-9999</p>
         </div>
         <div className="footer-links">
           <a href="#">Termos de Uso</a>
