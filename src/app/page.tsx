@@ -1,10 +1,9 @@
-import Image from "next/image";
-import { Login } from "../components/login";
+import { Home } from "./pages/Home";
 
-export default function Home() {
+export default function Main() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <Login />
+      <Home/>
     </div>
   );
 }
