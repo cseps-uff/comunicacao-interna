@@ -40,6 +40,13 @@ body {
     color: var(--primary-color);
 }
 
+.logo a{
+    text-decoration: none; /*Mesma coisa lá embaixo, logo a é o mesmo que """logo Link""" (Entre muitas aspas)*/
+    color: inherit;        
+    display: block;       
+    width: 100%;
+}
+
 .nav-links a {
     text-decoration: none;
     color: #666;
@@ -99,6 +106,13 @@ body {
 
 .space-list li:hover {
     color: var(--primary-color);
+}
+
+.space-list li a { /*funciona para os Link, eles são vistos igual a uma a do HTML*/
+    text-decoration: none;
+    color: inherit;        
+    display: block;       
+    width: 100%;
 }
 
 /* Conteúdo Principal */
