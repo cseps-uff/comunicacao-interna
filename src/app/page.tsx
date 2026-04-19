@@ -1,6 +1,7 @@
 "use client"; // Essa diretiva é necessária no Next.js pois temos interatividade na tela (clicks e estados)
 
 import { useState } from "react";
+import Link from "next/link";
 
 export default function TaskMasterApp() {
   // O useState substitui a lógica do app.ts para controlar qual tela está ativa
@@ -8,43 +9,17 @@ export default function TaskMasterApp() {
 
   return (
     <>
-
-
-      {/* Header */}
-      {/*============================================*/}
-      <header className="topbar">
-        <div className="logo">
-          ComunicaIEEE
-          </div>
-        <nav className="nav-links">
-          <a
-            href="#"
-            className={activeView === "home-view" ? "active" : ""}
-            onClick={(e) => { e.preventDefault(); setActiveView("home-view"); }}>
-
-            {/* implementar visão de status: tarefas ou dashboards ou... */}
-
-          </a>
-        </nav>
-        <div className="user-profile">
-          <div className="avatar">U</div>
-        </div>
-      </header>
-      {/*============================================*/}
-
-
-
       {/* Layout Principal */}
       {/*============================================*/}
       <div className="main-layout">
         {/* Sidebar */}
         <aside className="sidebar">
-          <h3>Spaces</h3>
+          <h3>Menu lateral</h3>
           <ul className="space-list">
-            <li>🗓️ Calendário geral</li>
-            <li>📝 Tarefas geral</li>
-            <li>🪟 Pessoas</li>
-            <li>😁 Só adicionar uma li que aparece aqui embaixo</li>
+            <li><Link href="/tarefas">📝 Tarefas</Link></li>
+            <li><Link href="/calendario">🗓️ Calendário</Link></li>
+            <li><Link href="/dashboard">📈 Dashboard</Link></li>
+            <li><a href="https://drive.google.com/drive/folders/1l7Syo-oopkDD9_LqSzi4YY5q32plP6vd" target="_blank">📄 Drive do Capitulo</a></li>
           </ul>
         </aside>
         {/*============================================*/}
@@ -97,21 +72,6 @@ export default function TaskMasterApp() {
       </div>
       {/*============================================*/}
       {/* essa div é enorme, inclui tudo que é do menu principal */}
-
-
-      {/* Footer */}
-      {/*============================================*/}
-      <footer className="footer">
-        <div className="footer-info">
-          <p>&copy; 2026 Projeto de Comunicação Interna CS-EPS UFF. </p>
-          <p>Contato: @oisacazevedo | +55 (21) 99999-9999</p>
-        </div>
-        <div className="footer-links">
-          <a href="#">Termos de Uso</a>
-          <a href="#">Privacidade</a>
-          <a href="#">Central de Ajuda</a>
-        </div>
-      </footer>
     </>
   );
 }
