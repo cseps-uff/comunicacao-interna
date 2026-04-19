@@ -32,12 +32,8 @@ export default function RootLayout({
     >
       <body className="min-h-screen flex flex-col">    
         <Header /> {/* 1 */}
-          <div className="main-layout">
-            <Menu /> {/* 2 */}
-              <main className="content"> 
-                {children} {/* 3 */}
-              </main>
-          </div>
+        <Menu /> {/* 2 */}
+        {children} {/* 3 */}
         <Footer /> {/* 4 */}
       </body>
     </html>
