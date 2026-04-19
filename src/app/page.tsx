@@ -13,28 +13,17 @@ export default function TaskMasterApp() {
       {/* Header */}
       {/*============================================*/}
       <header className="topbar">
-        <div className="logo">ComunicaIEEE</div>
+        <div className="logo">
+          ComunicaIEEE
+          </div>
         <nav className="nav-links">
           <a
             href="#"
             className={activeView === "home-view" ? "active" : ""}
-            onClick={(e) => { e.preventDefault(); setActiveView("home-view"); }}
-          >
-            Início
-          </a>
-          <a
-            href="#"
-            className={activeView === "tasks-view" ? "active" : ""}
-            onClick={(e) => { e.preventDefault(); setActiveView("tasks-view"); }}
-          >
-            Minhas Tarefas
-          </a>
-          <a
-            href="#"
-            className={activeView === "dashboards-view" ? "active" : ""}
-            onClick={(e) => { e.preventDefault(); setActiveView("dashboards-view"); }}
-          >
-            Dashboards
+            onClick={(e) => { e.preventDefault(); setActiveView("home-view"); }}>
+
+            {/* implementar visão de status: tarefas ou dashboards ou... */}
+
           </a>
         </nav>
         <div className="user-profile">
