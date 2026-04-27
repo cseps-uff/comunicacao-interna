@@ -6,4 +6,4 @@ export default function Main() {
       <Home/>
     </div>
   );
-}
+} 
