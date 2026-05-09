@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Newsletter() {
   return (
-      <p></p>
+    <p></p>
   );
 }
 

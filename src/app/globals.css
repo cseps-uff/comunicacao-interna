@@ -83,6 +83,7 @@ body {
     width: 250px;
     background-color: var(--sidebar-bg);
     border-right: 1px solid var(--border-color);
+    flex-shrink: 0;
     padding: 24px;
 }
 
@@ -155,9 +156,15 @@ body {
     color: white;
 }
 
-.to-do { background-color: #a8b2c3; }
-.in-progress { background-color: #00a2ff; }
-.done { background-color: #00d084; }
+.to-do { 
+    background-color: #a8b2c3; 
+}
+.in-progress { 
+    background-color: #00a2ff;
+}
+.done { 
+    background-color: #00d084; 
+}
 
 .task-card {
     background: white;
@@ -204,4 +211,35 @@ body {
 
 .footer-links a:hover {
     text-decoration: underline;
+}
+/* 1. O contêiner da área em branco (assumindo que ele ocupa o resto da tela) */
+.area-conteudo {
+  padding: 0.5rem 2rem 2rem 2rem; /* Dá um respiro das bordas do menu lateral e topo */
+  overflow-y: auto; /* Permite rolar a página se o texto for gigante */
+  display: flex;
+  justify-content: center; /* Centraliza o bloco de texto horizontalmente */
+}
+
+/* 2. O cartão onde o texto vai ficar (estilo "folha de papel") */
+.cartao-texto {
+  background-color: #ffffff;
+  max-width: 800px; /* Limita a largura para não cansar a leitura */
+  width: 100%;
+  padding: 3rem; /* Bastante espaço interno para ficar elegante */
+  border-radius: 8px; /* Bordas arredondadas suaves */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); /* Sombra bem leve para destacar do fundo cinza */
+}
+
+/* 3. Estilização da Tipografia (o texto em si) */
+.texto-corrido h1 {
+  font-size: 2rem;
+  color: #111827; /* Quase preto */
+  margin-bottom: 1.5rem;
+}
+
+.texto-corrido p {
+  font-size: 1.125rem; /* Tamanho confortável (aprox 18px) */
+  line-height: 1.8;    /* Espaçamento generoso entre as linhas (muito importante!) */
+  color: #374151;      /* Cinza escuro (ler no preto puro cansa os olhos) */
+  margin-bottom: 1.5rem; /* Espaço entre os parágrafos */
 }
