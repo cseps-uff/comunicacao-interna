@@ -10,9 +10,41 @@
 :root {
     --primary-color: #7b68ee;
     --bg-color: #f7f8f9;
+    --tpbar-color: #dad6c1f8;
     --text-color: #333;
     --sidebar-bg: #ffffff;
-    --border-color: #e0e0e0;
+    --border-color: #38363663;
+}
+.dark {
+    --primary-color: #EEFD7B;
+    --bg-color: #5a545456;
+    --tpbar-color: #807d6f1f;
+    --text-color: #ffffffce;
+    --sidebar-bg: #333333;
+    --border-color: #d4d4d460;
+}
+.botao-tema {
+  background-color: var(--cor-fundo-tela);
+  color: var(--cor-texto-titulo);
+  border: 1px solid var(--cor-borda);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.botao-tema:hover {
+  filter: brightness(0.9); /* Dá um efeitinho de hover escurecendo o fundo levemente */
+}
+
+/* Para o hover funcionar bem no modo escuro também */
+.dark .botao-tema:hover {
+  filter: brightness(1.2); /* No modo escuro, clareamos um pouco no hover */
 }
 
 body {
@@ -28,7 +60,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffffff;
+    background-color: var(--tpbar-color);
     padding: 0 24px;
     height: 60px;
     border-bottom: 1px solid var(--border-color);
@@ -83,6 +115,7 @@ body {
     width: 250px;
     background-color: var(--sidebar-bg);
     border-right: 1px solid var(--border-color);
+    color: var(--text-color);
     flex-shrink: 0;
     padding: 24px;
 }
@@ -193,14 +226,14 @@ body {
 
 /* Footer */
 .footer {
-    background-color: #ffffff;
+    background-color: var(--bg-color);
     border-top: 1px solid var(--border-color);
     padding: 20px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 0.85rem;
-    color: #666;
+    color: var(--text-color);
 }
 
 .footer-links a {
