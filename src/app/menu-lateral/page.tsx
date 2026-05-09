@@ -5,7 +5,6 @@ export default function Menu(){
             <aside className="sidebar">
             <h3>Menu lateral</h3>
                 <ul className="space-list">
-                    
                     <li><Link href="/tarefas">📝 Tarefas</Link></li>
                     <li><Link href="/calendario">🗓️ Calendário</Link></li>
                     <li><Link href="/dashboard">📈 Dashboard</Link></li>
