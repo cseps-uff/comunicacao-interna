@@ -8,3 +8,5 @@ export default function Footer(){
         </footer>
     )
 }
+
+/* MEXER NO USUARIO QUE TÁ TODO TORTO */

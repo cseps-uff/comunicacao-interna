@@ -26,12 +26,17 @@ export default function Header(){
             <div className="user-profile">
                 <div className="avatar">I</div>
             </div>
-            <button className="botao-tema"
-                onClick={() => setTheme(temaAtualEscuro ? 'light' : 'dark')}
-                title="Alternar tema"
+            {montado ? (
+                <button 
+                    className="botao-tema-imagem" 
+                    onClick={() => setTheme(temaAtualEscuro ? 'light' : 'dark')}
+                    title="Alternar Tema"
                 >
-                {temaAtualEscuro ? '☀️ Modo Claro' : '🌙 Modo Escuro'}
-            </button>
+                    <img src="/dark_button.png" alt="Alternar Tema" className="icone-tema" />
+                </button>
+            ) : (
+                <div style={{ width: '40px', height: '40px' }}></div> 
+            )}
         </header>
     );
 }

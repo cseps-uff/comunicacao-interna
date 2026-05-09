@@ -46,6 +46,12 @@
 .dark .botao-tema:hover {
   filter: brightness(1.2); /* No modo escuro, clareamos um pouco no hover */
 }
+.icone-tema {
+  /* Eu sugiro um tamanho entre 24px e 30px para ficar proporcional ao texto */
+  width: auto;             /* Deixa a largura proporcional à altura */
+  height: 28px;            /* Define a altura desejada */
+  object-fit: contain;     /* Garante que a imagem não fique esticada */
+}
 
 body {
     background-color: var(--bg-color);
