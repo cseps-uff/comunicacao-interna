@@ -27,7 +27,16 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+<body className="min-h-screen flex flex-col">    
+  <Header />
+  <div style={{ display: "flex", flex: 1, overflow: "hidden" }}>
+    <Menu />
+  <div style={{ flex: 1, overflowY: "auto" }}>
+    {children}
+  </div>
+  </div>
+  <Footer />
+</body>
     </html>
   );
 }
