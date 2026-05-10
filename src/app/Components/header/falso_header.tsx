@@ -9,7 +9,7 @@ export default function Header(){
             <div className="logo">
                 <Link href="/">Comunica IEEE</Link>
             </div>
-            <div className="topbar">
+            <div className="nav-links">
                 {atualpag}
             </div>
             <div className="user-profile">
