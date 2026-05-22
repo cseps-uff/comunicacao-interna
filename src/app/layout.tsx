@@ -41,5 +41,3 @@ export default function RootLayout({children}: Readonly<{
     </html>
   );
 }
-
-// isso eh um comentario
