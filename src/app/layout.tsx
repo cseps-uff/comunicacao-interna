@@ -32,10 +32,18 @@ export default function RootLayout({children}: Readonly<{
     >
       <body className="min-h-screen flex flex-col">   
         <ThemeProvider>
-          <Header /> {/* 1 */}
-          <Menu /> {/* 2 */}
-          {children} {/* 3 */}
-          <Footer /> {/* 4 */}
+          <Header />
+
+          <div className="main-layout">
+            <Menu />
+
+            <main className="content">
+              {children}
+              </main>
+          </div>
+
+            <Footer />
+
         </ThemeProvider> 
       </body>
     </html>
