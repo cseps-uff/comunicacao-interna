@@ -1,11 +1,16 @@
 .topbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     background-color: var(--tpbar-color);
     padding: 0 24px;
     height: 60px;
     border-bottom: 1px solid var(--border-color);
+}
+
+.atualpag {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .logo {
@@ -25,7 +30,7 @@
     text-decoration: none;
     color: #666;
     margin: 0 16px;
-    font-weight: 600;
+    font-weight: 10000;
     transition: color 0.2s;
 }
 
@@ -33,14 +38,14 @@
     color: var(--primary-color);
 }
 
-.user-profile .avatar {
+.avatar {
     width: 35px;
     height: 35px;
+    border-radius: 50%;
     background-color: var(--primary-color);
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
     font-weight: bold;
 }

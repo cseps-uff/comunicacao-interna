@@ -21,12 +21,15 @@ export default function Header(){
             <div className="logo">
                 <Link href="/">Comunica IEEE</Link>
             </div>
-            <div className="topbar">
+            
+            <div className="atualpag">
                 {atualpag}
             </div>
-            <div className="user-profile">
-                <div className="avatar">I</div>
-            </div>
+            
+            <div className="avatar">
+                I
+                </div>
+
             {montado ? (
                 <button 
                     className="botao-tema-imagem" 
