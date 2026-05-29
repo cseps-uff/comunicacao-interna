@@ -2,10 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import './newslatter.css';
 
 export default function Newsletter() {
   return (
-    <p></p>
+    <div className="main#box">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia placeat eos suscipit! Incidunt deserunt ipsa reiciendis obcaecati saepe vitae commodi nobis molestiae nisi. Dolor laboriosam, facere quaerat ipsa rerum quae?</p>
+    </div>
   );
 }
 

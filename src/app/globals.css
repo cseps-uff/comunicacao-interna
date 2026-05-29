@@ -42,35 +42,7 @@ body {
     padding: 32px;
     overflow-y: auto;
 }
-.botao-tema {
-  background-color: var(--cor-fundo-tela);
-  color: var(--cor-texto-titulo);
-  border: 1px solid var(--cor-borda);
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 0.875rem;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-}
 
-.botao-tema:hover {
-  filter: brightness(0.9); /* Dá um efeitinho de hover escurecendo o fundo levemente */
-}
-
-/* Para o hover funcionar bem no modo escuro também */
-.dark .botao-tema:hover {
-  filter: brightness(1.2); /* No modo escuro, clareamos um pouco no hover */
-}
-.icone-tema {
-  /* Eu sugiro um tamanho entre 24px e 30px para ficar proporcional ao texto */
-  width: auto;             /* Deixa a largura proporcional à altura */
-  height: 28px;            /* Define a altura desejada */
-  object-fit: contain;     /* Garante que a imagem não fique esticada */
-}
 
 /* 1. O contêiner da área em branco (assumindo que ele ocupa o resto da tela) */
 .area-conteudo {
