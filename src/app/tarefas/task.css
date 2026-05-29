@@ -44,7 +44,7 @@ main#box{
 
 .tarefas-column {
     flex: 1;
-    background-color: #f6f8fc;
+    background-color: #ffffffff;
     border-radius: 12px;
     padding: 12px;
     display: flex;
@@ -68,22 +68,6 @@ main#box{
     background-color: rgba(255, 255, 255, 0.5);
     pointer-events: none;
     opacity: 0;
-}
-
-.tarefas-column[data-id="1"]::after { 
-    background-color: #fb5f5f;
-}
-
-.tarefas-column[data-id="2"]::after {
-    background-color: #fcd36c;
-}
-
-.tarefas-column[data-id="3"]::after {
-    background-color: #3b82f6;
-}
-
-.tarefas-column[data-id="4"]::after {
-    background-color: #10b981;
 }
 
 .tarefas-title {
@@ -118,7 +102,7 @@ main#box{
     display: flex;
     flex-direction: column;
     gap: 8px;
-    background-color: #ffffff;
+    background-color: #afafaf;
     padding: 10px;
     border-radius: 14px;
     box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.1);
