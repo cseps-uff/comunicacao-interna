@@ -7,12 +7,29 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
+/* body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(90deg, #a5b4fc, #93c5fc);
+} */
+
+main#box{
+    display: flex;
+    flex-direction: column;
+    background-color: #242B33;
+    height: 100%;
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 15px;
+    border: 2px solid rgb(85, 79, 79);
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    align-items: center;
 }
 
 .Tarefas {
@@ -173,3 +190,4 @@ body {
     background-color: #dde9fa;
     border-radius: 10px;
 }
+
