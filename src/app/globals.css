@@ -23,6 +23,25 @@
     --sidebar-bg: #333333;
     --border-color: #d4d4d460;
 }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+.main-layout {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+.content {
+    flex: 1;
+    padding: 32px;
+    overflow-y: auto;
+}
 .botao-tema {
   background-color: var(--cor-fundo-tela);
   color: var(--cor-texto-titulo);
@@ -53,118 +72,52 @@
   object-fit: contain;     /* Garante que a imagem não fique esticada */
 }
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    overflow: hidden;
+/* 1. O contêiner da área em branco (assumindo que ele ocupa o resto da tela) */
+.area-conteudo {
+  padding: 0.5rem 2rem 2rem 2rem; /* Dá um respiro das bordas do menu lateral e topo */
+  overflow-y: auto; /* Permite rolar a página se o texto for gigante */
+  display: flex;
+  justify-content: center; /* Centraliza o bloco de texto horizontalmente */
+}
+
+/* 2. O cartão onde o texto vai ficar (estilo "folha de papel") */
+.cartao-texto {
+  background-color: #ffffff;
+  max-width: 800px; /* Limita a largura para não cansar a leitura */
+  width: 100%;
+  padding: 3rem; /* Bastante espaço interno para ficar elegante */
+  border-radius: 8px; /* Bordas arredondadas suaves */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); /* Sombra bem leve para destacar do fundo cinza */
+}
+
+/* 3. Estilização da Tipografia (o texto em si) */
+.texto-corrido h1 {
+  font-size: 2rem;
+  color: #111827; /* Quase preto */
+  margin-bottom: 1.5rem;
+}
+
+.texto-corrido p {
+  font-size: 1.125rem; /* Tamanho confortável (aprox 18px) */
+  line-height: 1.8;    /* Espaçamento generoso entre as linhas (muito importante!) */
+  color: #374151;      /* Cinza escuro (ler no preto puro cansa os olhos) */
+  margin-bottom: 1.5rem; /* Espaço entre os parágrafos */
 }
 
 /* Header */
-.topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--tpbar-color);
-    padding: 0 24px;
-    height: 60px;
-    border-bottom: 1px solid var(--border-color);
-}
 
-.logo {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--primary-color);
-}
-
-.logo a{
-    text-decoration: none; /*Mesma coisa lá embaixo, logo a é o mesmo que """logo Link""" (Entre muitas aspas)*/
-    color: inherit;        
-    display: block;       
-    width: 100%;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #666;
-    margin: 0 16px;
-    font-weight: 600;
-    transition: color 0.2s;
-}
-
-.nav-links a:hover, .nav-links a.active {
-    color: var(--primary-color);
-}
-
-.user-profile .avatar {
-    width: 35px;
-    height: 35px;
-    background-color: var(--primary-color);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    font-weight: bold;
-}
 
 /* Layout Principal */
-.main-layout {
-    display: flex;
-    flex: 1;
-    overflow: hidden;
-}
+
 
 /* Sidebar */
-.sidebar {
-    width: 250px;
-    background-color: var(--sidebar-bg);
-    border-right: 1px solid var(--border-color);
-    color: var(--text-color);
-    flex-shrink: 0;
-    padding: 24px;
-}
 
-.sidebar h3 {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    color: #888;
-    margin-bottom: 16px;
-}
-
-.space-list {
-    list-style: none;
-}
-
-.space-list li {
-    padding: 8px 0;
-    cursor: pointer;
-    font-size: 0.95rem;
-    color: #555;
-}
-
-.space-list li:hover {
-    color: var(--primary-color);
-}
-
-.space-list li a { /*funciona para os Link, eles são vistos igual a uma a do HTML*/
-    text-decoration: none;
-    color: inherit;        
-    display: block;       
-    width: 100%;
-}
 
 /* Conteúdo Principal */
-.content {
-    flex: 1;
-    padding: 32px;
-    overflow-y: auto;
-}
+
 
 /* Controle de Views (Navegação) */
-.view-section {
+/* .view-section {
     display: none;
 }
 
@@ -172,7 +125,7 @@ body {
     display: block;
 }
 
-/* Kanban Board */
+
 .task-board {
     display: flex;
     gap: 24px;
@@ -229,58 +182,9 @@ body {
     border-radius: 8px;
     margin-top: 24px;
     color: #666;
-}
+} */
 
 /* Footer */
-.footer {
-    background-color: var(--bg-color);
-    border-top: 1px solid var(--border-color);
-    padding: 20px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.85rem;
-    color: var(--text-color);
-}
 
-.footer-links a {
-    text-decoration: none;
-    color: #666;
-    margin-left: 16px;
-}
 
-.footer-links a:hover {
-    text-decoration: underline;
-}
-/* 1. O contêiner da área em branco (assumindo que ele ocupa o resto da tela) */
-.area-conteudo {
-  padding: 0.5rem 2rem 2rem 2rem; /* Dá um respiro das bordas do menu lateral e topo */
-  overflow-y: auto; /* Permite rolar a página se o texto for gigante */
-  display: flex;
-  justify-content: center; /* Centraliza o bloco de texto horizontalmente */
-}
-
-/* 2. O cartão onde o texto vai ficar (estilo "folha de papel") */
-.cartao-texto {
-  background-color: #ffffff;
-  max-width: 800px; /* Limita a largura para não cansar a leitura */
-  width: 100%;
-  padding: 3rem; /* Bastante espaço interno para ficar elegante */
-  border-radius: 8px; /* Bordas arredondadas suaves */
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); /* Sombra bem leve para destacar do fundo cinza */
-}
-
-/* 3. Estilização da Tipografia (o texto em si) */
-.texto-corrido h1 {
-  font-size: 2rem;
-  color: #111827; /* Quase preto */
-  margin-bottom: 1.5rem;
-}
-
-.texto-corrido p {
-  font-size: 1.125rem; /* Tamanho confortável (aprox 18px) */
-  line-height: 1.8;    /* Espaçamento generoso entre as linhas (muito importante!) */
-  color: #374151;      /* Cinza escuro (ler no preto puro cansa os olhos) */
-  margin-bottom: 1.5rem; /* Espaço entre os parágrafos */
-}
 

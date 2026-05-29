@@ -1,0 +1,37 @@
+.sidebar {
+    width: 250px;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    color: var(--text-color);
+    flex-shrink: 0;
+    padding: 24px;
+}
+
+.sidebar h3 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 16px;
+}
+
+.space-list {
+    list-style: none;
+}
+
+.space-list li {
+    padding: 8px 0;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.space-list li:hover {
+    color: var(--primary-color);
+}
+
+.space-list li a { /*funciona para os Link, eles são vistos igual a uma a do HTML*/
+    text-decoration: none;
+    color: inherit;        
+    display: block;       
+    width: 100%;
+}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import './sidebar.css';
 export default function Menu(){
     return(
             <aside className="sidebar">
