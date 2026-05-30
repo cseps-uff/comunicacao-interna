@@ -1,5 +1,6 @@
 import "./calend.css";
 
+// Função para obter o número de dias do mês atual
 function getDaysInCurrentMonth(): number{
     const actualMonth = new Date().getMonth() + 1; // Obter o mês atual (0-11, então adicionamos 1)
     const actualYear = new Date().getFullYear(); // Obter o ano atual
@@ -19,7 +20,7 @@ export default function Grid(){
     const days = [];
     for (let i = 1; i <= daysInMonth; i++) {
         days.push(
-        <div className="day" {...(i === getDay()) ? {id: "actual-day"} : {}}>
+        <div className="day" { ...(i === getDay()) ? {id: "actual-day"} : {} }>
             <span className="n-day">{i}</span>
             </div>
     );
