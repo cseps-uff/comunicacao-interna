@@ -72,7 +72,32 @@ export default function TarefasPage() {
 
     {/* Nova Box Principal estilizada pelo seu CSS */}
     <main id="box">
-      
+
+
+      {/* TypeScript do botao de filtro inserido antes das tabelas*/}
+      <div className="dropdown-filter" style={{ alignSelf: 'flex-start' }}>
+          <input type="checkbox" id="meu-filtro-toggle" className="dropdown-toggle" />
+          
+          <label htmlFor="meu-filtro-toggle" className="dropdown-button">
+            FILTROS
+          </label>
+
+          <div className="dropdown-menu">
+            <label className="dropdown-item">
+              <input type="checkbox" name="categoria"/> PROJETO "X"
+            </label>
+            <label className="dropdown-item">
+              <input type="checkbox" name="categoria"/> PROJETO "Y"
+            </label>
+            <label className="dropdown-item">
+              <input type="checkbox" name="categoria"/> MAIS RECENTES
+            </label>
+            <label className="dropdown-item">
+              <input type="checkbox" name="categoria"/> ATRASADAS
+            </label>
+          </div>
+        </div>
+
       {/* O container antigo agora virou uma div para manter as colunas lado a lado */}
       <div className="Tarefas" style={{ display: 'flex', width: '100%', justifyContent: 'space-between' }}>
         
