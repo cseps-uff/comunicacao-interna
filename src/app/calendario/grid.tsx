@@ -18,11 +18,12 @@ export default function Grid(){
     const daysInMonth = getDaysInCurrentMonth();
 
     const days = [];
-    for (let i = 1; i <= daysInMonth; i++) {
+    for (let i = 1; i <= daysInMonth; i++){
         days.push(
         <div className="day" { ...(i === getDay()) ? {id: "actual-day"} : {} }>
             <span className="n-day">{i}</span>
-            </div>
+            <span className="add-event"> + </span>
+        </div>
     );
     }
 

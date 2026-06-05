@@ -54,17 +54,16 @@ span.arrow:hover{
     background-color: #295285;
     color: white;
     display: flex;
-    width: 1fr;
-    height: 1fr;
+    justify-content: space-between;
+    width: 100%;
     min-height: 80%;
     padding: 5px;
     border-radius: 5px;
-    justify-content: start;
     font-size: 20px;
     font-weight: bold;
 }
 
-.day:hover{
+.day:hover .add-event{
     background-color: #155EB8;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -81,4 +80,20 @@ span.arrow:hover{
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 20px;
+}
+
+.add-event{
+    color: white;
+    height: fit-content;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 3px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.day:hover .add-event{
+    background-color: #6a9ddb;
+    opacity: 1;
 }
