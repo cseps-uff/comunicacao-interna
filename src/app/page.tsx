@@ -22,3 +22,6 @@ function fazendoBomDia() {
       return "Boa noite!";
     }
 }
+function notificaNovaTask(){
+  
+}
