@@ -1,13 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { getActivitiesByDay, useActivities } from "../shared/activities";
 import "./calend.css";
-
-type Activity = {
-    title: string;
-    time: string;
-    description: string;
-};
 
 function getDaysInCurrentMonth(): number {
     const actualMonth = new Date().getMonth() + 1;
@@ -20,48 +15,15 @@ function getToday(): number {
     return new Date().getDate();
 }
 
-const activitiesByDay: Record<number, Activity[]> = {
-    2: [
-        {
-            title: "Reunião com a coordenação",
-            time: "09:00",
-            description: "Alinhar demandas da semana e pendências do setor.",
-        },
-        {
-            title: "Entrega de relatório",
-            time: "15:30",
-            description: "Enviar o consolidado das atividades internas.",
-        },
-    ],
-    8: [
-        {
-            title: "Atualização do painel",
-            time: "10:00",
-            description: "Revisar indicadores e publicar as novidades.",
-        },
-    ],
-    15: [
-        {
-            title: "Treinamento da equipe",
-            time: "14:00",
-            description: "Sessão de alinhamento com novos procedimentos.",
-        },
-        {
-            title: "Checagem de tarefas",
-            time: "16:00",
-            description: "Verificar o andamento das pendências abertas.",
-        },
-    ],
-};
-
 export default function Grid() {
     const daysInMonth = getDaysInCurrentMonth();
     const today = getToday();
     const [selectedDay, setSelectedDay] = useState(today);
+    const activities = useActivities();
 
     const selectedActivities = useMemo(() => {
-        return activitiesByDay[selectedDay] ?? [];
-    }, [selectedDay]);
+        return activities.items.filter((activity) => activity.day === selectedDay);
+    }, [activities, selectedDay]);
 
     const days = [];
     for (let i = 1; i <= daysInMonth; i++) {

@@ -1,9 +1,28 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { addActivity, ActivityStatus, useActivities } from '../shared/activities';
 import './task.css'; // Importação do seu arquivo CSS na mesma pasta
 
+const columnOrder: ActivityStatus[] = ['Pendente', 'Não iniciada', 'Em andamento', 'Concluída'];
+
 export default function TarefasPage() {
+  const activities = useActivities();
+  const [selectedStatus, setSelectedStatus] = useState<ActivityStatus>('Pendente');
+  const [form, setForm] = useState({
+    title: '',
+    day: String(new Date().getDate()),
+    time: '09:00',
+    description: '',
+  });
+
+  const columns = useMemo(() => {
+    return columnOrder.map((status) => ({
+      status,
+      items: activities.items.filter((activity) => activity.status === status),
+    }));
+  }, [activities]);
+
   useEffect(() => {
     const cards = document.querySelectorAll('.tarefas-card');
     const columns = document.querySelectorAll('.tarefas-cards');
@@ -60,6 +79,24 @@ export default function TarefasPage() {
     };
   }, []);
 
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    addActivity({
+      title: form.title.trim(),
+      day: Number(form.day),
+      time: form.time,
+      description: form.description.trim(),
+      status: selectedStatus,
+    });
+
+    setForm((currentForm) => ({
+      ...currentForm,
+      title: '',
+      description: '',
+    }));
+  }
+
   return (
   <>
     <link
@@ -72,6 +109,41 @@ export default function TarefasPage() {
 
     {/* Nova Box Principal estilizada pelo seu CSS */}
     <main id="box">
+
+      <form className="activity-form" onSubmit={handleSubmit}>
+        <input
+          value={form.title}
+          onChange={(event) => setForm({ ...form, title: event.target.value })}
+          placeholder="Título da atividade"
+          required
+        />
+        <input
+          type="number"
+          min="1"
+          max="31"
+          value={form.day}
+          onChange={(event) => setForm({ ...form, day: event.target.value })}
+          required
+        />
+        <input
+          type="time"
+          value={form.time}
+          onChange={(event) => setForm({ ...form, time: event.target.value })}
+          required
+        />
+        <textarea
+          value={form.description}
+          onChange={(event) => setForm({ ...form, description: event.target.value })}
+          placeholder="Descrição"
+          required
+        />
+        <select value={selectedStatus} onChange={(event) => setSelectedStatus(event.target.value as ActivityStatus)}>
+          {columnOrder.map((status) => (
+            <option key={status} value={status}>{status}</option>
+          ))}
+        </select>
+        <button type="submit">Adicionar atividade</button>
+      </form>
 
 
       {/* TypeScript do botao de filtro inserido antes das tabelas*/}
@@ -101,57 +173,26 @@ export default function TarefasPage() {
       {/* O container antigo agora virou uma div para manter as colunas lado a lado */}
       <div className="Tarefas" style={{ display: 'flex', width: '100%', justifyContent: 'space-between' }}>
         
-        {/* Coluna 1: Pendente */}
-        <div className="tarefas-column" data-id="1">
+        {columns.map(({ status, items }, index) => (
+        <div className="tarefas-column" data-id={String(index + 1)} key={status}>
           <div className="tarefas-title">
-            <h2>Pendente</h2>
+            <h2>{status}</h2>
             <button className="add-card">
               <i className="fa-solid fa-plus"></i>
             </button>
           </div>
           <div className="tarefas-cards">
-            {/* ... seu card aqui ... */}
+            {items.map((activity) => (
+              <article className="tarefas-card" key={activity.id}>
+                <span className="badge medium">Dia {activity.day}</span>
+                <strong>{activity.title}</strong>
+                <p>{activity.description}</p>
+                <small>{activity.time}</small>
+              </article>
+            ))}
           </div>
         </div>
-
-        {/* Coluna 2: Não iniciada */}
-        <div className="tarefas-column" data-id="2">
-          <div className="tarefas-title">
-            <h2>Não iniciada</h2>
-            <button className="add-card">
-              <i className="fa-solid fa-plus"></i>
-            </button>
-          </div>
-          <div className="tarefas-cards">
-            {/* ... seu card aqui ... */}
-          </div>
-        </div>
-
-        {/* Coluna 3: Em andamento */}
-        <div className="tarefas-column" data-id="3">
-          <div className="tarefas-title">
-            <h2>Em andamento</h2>
-            <button className="add-card">
-              <i className="fa-solid fa-plus"></i>
-            </button>
-          </div>
-          <div className="tarefas-cards">
-            {/* ... seu card aqui ... */}
-          </div>
-        </div>
-
-        {/* Coluna 4: Concluída */}
-        <div className="tarefas-column" data-id="4">
-          <div className="tarefas-title">
-            <h2>Concluída</h2>
-            <button className="add-card">
-              <i className="fa-solid fa-plus"></i>
-            </button>
-          </div>
-          <div className="tarefas-cards">
-            {/* ... seu card aqui ... */}
-          </div>
-        </div>
+        ))}
 
       </div>
     </main>

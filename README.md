@@ -1,53 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Comunicação Interna CSEPS
 
-## Getting Started
+Ferramenta web em desenvolvimento para comunicação interna do capítulo IEEE CS & EPS UFF.
 
-First, run the development server:
+## Status atual do projeto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+O projeto está em fase de MVP funcional. Já existe navegação entre as principais áreas e a relação entre **Tarefas** e **Calendário** está integrada por uma fonte compartilhada de atividades.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O que já está funcionando:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Menu lateral com acesso às páginas principais.
+- Página de Tarefas com colunas por status.
+- Criação de atividades com dia, horário, descrição e status.
+- Calendário com seleção de dia e visualização das atividades daquele dia.
+- Sincronização entre Tarefas e Calendário usando a mesma base de dados no navegador.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+O que ainda está em evolução:
 
-## Learn More
+- Persistência em backend ou banco de dados real.
+- Edição, exclusão e movimentação real das atividades entre colunas.
+- Dashboard com métricas e gráficos.
+- Refinamento visual e validação de fluxo com usuários.
 
-To learn more about Next.js, take a look at the following resources:
+## Estrutura do projeto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `src/app/tarefas`: quadro de tarefas e formulário de criação de atividades.
+- `src/app/calendario`: calendário mensal com lista de atividades por dia.
+- `src/app/menu-lateral`: navegação lateral do sistema.
+- `src/app/dashboard`: espaço reservado para indicadores.
+- `src/app/shared/activities.ts`: fonte compartilhada das atividades entre as telas.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Como executar
 
-## Deploy on Vercel
+### Requisitos
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Node.js instalado.
+- npm instalado.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-# comunicação-interna
-Projeto de criação de uma ferramenta de comunicação interna para o capítulo IEEE CS &amp; EPS UFF
-
-## Como clonar o projeto
-
-Para clonar o projeto em sua máquina, execute o seguinte comando:
+### Instalação
 
 ```bash
 git clone https://github.com/cseps-uff/comunicacao-interna.git
+cd comunicacao-interna
+npm install
 ```
 
-Após clonar, acesse o diretório do projeto:
+### Desenvolvimento
 
 ```bash
-cd comunicacao-interna
+npm run dev
 ```
+
+Depois, abra [http://localhost:3000](http://localhost:3000).
+
+### Outros comandos
+
+```bash
+npm run build
+npm run start
+npm run lint
+```
+
+## Observação sobre os dados
+
+As atividades criadas em **Tarefas** ficam salvas no `localStorage` do navegador. Isso permite que o **Calendário** mostre os mesmos dados sem precisar de backend por enquanto.
+
+## Próximas entregas sugeridas
+
+- Conectar o sistema a uma API ou banco de dados.
+- Permitir editar e excluir atividades.
+- Concluir a tela de dashboard.
+- Melhorar a experiência responsiva em telas menores.
