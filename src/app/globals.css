@@ -12,6 +12,7 @@
     --bg-color: #f7f8f9;
     --tpbar-color: #dad6c1f8;
     --text-color: #333;
+    --text-inverseColor: #ffffffce;
     --sidebar-bg: #ffffff;
     --border-color: #38363663;
 }
@@ -20,6 +21,7 @@
     --bg-color: #5a545456;
     --tpbar-color: #807d6f1f;
     --text-color: #ffffffce;
+    --text-inverseColor: #333;
     --sidebar-bg: #333333;
     --border-color: #d4d4d460;
 }

@@ -2,14 +2,14 @@
 main#box{
     display: flex;
     flex-direction: column;
-    background-color: #242B33;
-    height: 98%;
+    background-color: var(--tpbar-color);
+    height: 100%;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
     padding: 10px;
     margin: 0 auto;
     margin-top: 15px;
-    border: 2px solid rgb(85, 79, 79);
+    border: 2px solid var(--border-color);
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     justify-content: center;
@@ -25,7 +25,7 @@ section#header{
 }
 
 span.arrow{
-    color: white;
+    color: var(--text-color);
     font-size: 1.5rem;
     font-weight: bold;
     padding: 5px;
@@ -41,8 +41,9 @@ span.arrow:hover{
 
 .calendar{
     display: grid;
-    background-color: #2A3C52;
+    background-color: var(--bg-color);
     grid-template-columns: repeat(7, 1fr);
+    border: 2px solid var(--border-color);
     gap: 5px;
     width: 100%;
     height: 95%;
@@ -59,13 +60,14 @@ span.arrow:hover{
 
 .day{
     border: none;
-    background-color: #295285;
-    color: white;
+    background-color: var(--tpbar-color);
+    color: var(--text-color);
     display: flex;
     width: 100%;
     height: 100%;
     min-height: 80%;
     padding: 5px;
+    border: 2px solid var(--border-color);
     border-radius: 5px;
     justify-content: flex-start;
     align-items: flex-start;
@@ -75,27 +77,27 @@ span.arrow:hover{
 }
 
 .day:hover{
-    background-color: #155EB8;
+    background-color: var(--primary-color);
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .selected-day{
-    outline: 3px solid #ffffff;
+    outline: 3px solid #583df0;;
     outline-offset: -3px;
 }
 
 .actual-day{
-    background-color: #1b6ccf;
+    background-color: var(--primary-color);
     border: 3px solid #a79d12;
 }
 
 .activities-panel {
-    background-color: #1f2f40;
+    background-color: var(--bg-color);
     border-radius: 10px;
     padding: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    color: white;
+    border: 2px solid var(--border-color);
+    color: var(--text-color);
 }
 
 .activities-header {
@@ -110,7 +112,7 @@ span.arrow:hover{
 }
 
 .activities-header p {
-    color: rgba(255, 255, 255, 0.75);
+    color: var(--text-color);
     font-size: 0.95rem;
 }
 
@@ -124,7 +126,8 @@ span.arrow:hover{
     display: flex;
     gap: 14px;
     align-items: flex-start;
-    background-color: #295285;
+    background-color: var(--tpbar-color);
+    border: 2px solid var(--border-color);
     border-radius: 8px;
     padding: 12px;
 }
@@ -133,7 +136,7 @@ span.arrow:hover{
     min-width: 64px;
     padding: 6px 8px;
     border-radius: 999px;
-    background-color: #155EB8;
+    background-color: var(--primary-color);
     font-size: 0.9rem;
     text-align: center;
 }
@@ -145,19 +148,19 @@ span.arrow:hover{
 
 .activity-card p {
     font-size: 0.92rem;
-    color: rgba(255, 255, 255, 0.82);
+    color: var(--text-color);
     line-height: 1.4;
 }
 
 .activity-empty {
     padding: 14px;
     border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.08);
-    color: rgba(255, 255, 255, 0.8);
+    background-color: var(--tpbar-color);
+    border: 2px solid var(--border-color);
 }
 
 #title{
-    color: white;
+    color: var(--text-color);
     text-align: center;
     font-size: 30px;
     font-weight: bold;

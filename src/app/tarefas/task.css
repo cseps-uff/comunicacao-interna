@@ -18,14 +18,14 @@
 main#box{
     display: flex;
     flex-direction: column;
-    background-color: #242B33;
+    background-color: var(--tpbar-color);
     height: 100%;
     width: 100%;
     max-width: 1200px;
     padding: 10px;
     margin: 0 auto;
     margin-top: 15px;
-    border: 2px solid rgb(85, 79, 79);
+    border: 2px solid var(--border-color);
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     justify-content: center;
@@ -45,7 +45,7 @@ main#box{
 .activity-form select,
 .activity-form button {
     border-radius: 8px;
-    border: 1px solid #d1d5db;
+    border: 2px solid var(--border-color);
     padding: 10px 12px;
     font: inherit;
 }
@@ -56,11 +56,11 @@ main#box{
 }
 
 .activity-form button {
-    background: #7b68ee;
-    color: white;
+    background: var(--bg-color);
+    color: var(--primary-color);
     font-weight: 600;
     cursor: pointer;
-    border: none;
+    border: 2px solid var(--border-color);
 }
 
 .activity-form button:hover {
@@ -79,8 +79,9 @@ main#box{
 
 .tarefas-column {
     flex: 1;
-    background-color: #ffffffff;
+    background-color: var(--bg-color);
     border-radius: 12px;
+    border: 2px solid var(--border-color);
     padding: 12px;
     display: flex;
     flex-direction: column;
@@ -112,7 +113,7 @@ main#box{
 
 .tarefas-title h2 {
     font-size: 18px;
-    color: #4b5563;
+    color: var(--text-color);
     font-weight: 600;
 }
 
