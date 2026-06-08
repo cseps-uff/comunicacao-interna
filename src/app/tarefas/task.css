@@ -15,7 +15,7 @@
     background: linear-gradient(90deg, #a5b4fc, #93c5fc);
 } */
 
-main#box {
+main#box{
     display: flex;
     flex-direction: column;
     background-color: var(--tpbar-color);
@@ -265,16 +265,14 @@ main#box {
 /* janela (escondida por padrao) */
 .dropdown-menu {
     position: absolute;
-    top: calc(100% + 8px);
-    /* poe a lista pra baixo do botao */
+    top: calc(100% + 8px); /* poe a lista pra baixo do botao */
     left: 0;
     background-color: #ffffff;
     min-width: 200px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     padding: 10px;
-    display: none;
-    /* esconde a lista */
+    display: none; /* esconde a lista */
     z-index: 100;
 }
 
@@ -303,11 +301,11 @@ main#box {
 }
 
 /* quando o checkbox invisivel for ativado, mostra a lista */
-.dropdown-toggle:checked~.dropdown-menu {
+.dropdown-toggle:checked ~ .dropdown-menu {
     display: block;
 }
 
 /* gira a setinha quando a lista abre */
-.dropdown-toggle:checked~.dropdown-button::after {
+.dropdown-toggle:checked ~ .dropdown-button::after {
     transform: rotate(180deg);
 }
