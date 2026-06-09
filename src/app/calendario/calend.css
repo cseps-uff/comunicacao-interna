@@ -63,9 +63,8 @@ span.arrow:hover{
     font-weight: bold;
 }
 
-.day:hover .add-event{
+.day:hover{
     background-color: #155EB8;
-    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
@@ -84,11 +83,13 @@ span.arrow:hover{
 
 .add-event{
     color: white;
-    height: fit-content;
+    background-color: #1b6ccf;
+    width: 1.2rem;
+    height: 1.3rem;
     font-size: 1.2rem;
     font-weight: bold;
-    padding: 3px;
-    border-radius: 50%;
+    border-radius: 100%;
+    border: none;
     opacity: 0;
     transition: opacity 0.2s ease;
 }
@@ -96,4 +97,112 @@ span.arrow:hover{
 .day:hover .add-event{
     background-color: #6a9ddb;
     opacity: 1;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card-task{
+    color: white;
+    background-color: #242B33;
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid rgb(85, 79, 79);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+
+    left: 250px;
+    top: 60px;
+    bottom: 60px;
+    margin: auto;
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease, overlay 0.4s, display 0.4s;
+    transition-behavior: allow-discrete;
+}
+
+.card-task:popover-open{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@starting-style{
+    .card-tarefa:popover-open{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+.card-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.card-title{
+    font: 700 1.5rem sans-serif;
+}
+
+#close-card{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#close-card:hover{
+    color: #ff4d4d;
+    transition: color 0.3s ease;
+}
+
+.input-group{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+input[type="text"].task-description{
+    height: 40px;
+}
+
+.input-group select{
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.card-actions{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+#complete-button{
+    color: rgb(255, 255, 255);
+    background-color: #E2B93B;
+    padding: 10px;
+    font-weight: bold;
+}
+
+#complete-button:hover{
+    background-color: #d4af37; /* Um tom ligeiramente mais escuro no hover */
+    transform: translateY(-1px);
+}
+
+#cancel-button{
+    color: #CCCCCC;
+    background-color: transparent;
+    padding: 10px;
+    font-weight: bold;
+    border-color: #CCCCCC
+}
+
+#cancel-button:hover{
+    background-color: rgba(255, 255, 255, 0.1); /* Um brilho sutil ao passar o mouse */
+    color: #ffffff;
 }
