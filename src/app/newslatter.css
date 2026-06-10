@@ -1,16 +1,68 @@
-main#box{
-    display: flex;
-    flex-direction: column;
-    background-color: #242B33;
-    height: 98%;
-    width: 100%;
-    max-width: 1000px;
-    padding: 10px;
-    margin: 0 auto;
-    margin-top: 15px;
-    border: 2px solid rgb(85, 79, 79);
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-    justify-content: center;
-    align-items: center;
+main#box {
+  display: flex;
+  flex-direction: column;
+  background-color: #242B33;
+  height: 98%;
+  width: 100%;
+  max-width: 1000px;
+  padding: 20px; /* Increased slightly for better spacing */
+  margin: 0 auto;
+  margin-top: 15px;
+  border: 2px solid rgb(85, 79, 79);
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ollama-style Input Container */
+.ollama-input-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 24px;
+  gap: 8px; /* Space between input and button */
+}
+
+.ollama-input {
+  background-color: var(--bg-color); /* Slightly darker than container for contrast */
+  border: 1px solid #3d4550;
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-size: 15px;
+  color: var(--text-color);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ollama-input::placeholder {
+  color: var(--text-color);
+}
+
+.ollama-input:focus {
+  border-color: var(--primary-color); /* Blue accent like Ollama */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.ollama-button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.ollama-button:hover {
+  background-color: #2563eb;
+}
+
+.ollama-button:active {
+  transform: scale(0.98);
 }
