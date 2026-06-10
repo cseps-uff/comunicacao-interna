@@ -41,3 +41,6 @@ function fazendoBomDia() {
   else if (horaAtual >= 12 && horaAtual < 18) return "Boa tarde!";
   else return "Boa noite!";
 }
+function notificaNovaTask(){
+
+}
