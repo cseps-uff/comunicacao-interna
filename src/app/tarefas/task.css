@@ -237,9 +237,8 @@ main#box{
     justify-content: space-between;
     min-width: 130px;
     padding: 10px 15px;
-    background-color: #ffffff;
-    border: 2px solid #7b68ee;
-    color: #7b68ee;
+    background-color: #7b68ee;
+    color: #ffffff;
     border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
@@ -308,4 +307,115 @@ main#box{
 /* gira a setinha quando a lista abre */
 .dropdown-toggle:checked ~ .dropdown-button::after {
     transform: rotate(180deg);
+}
+
+/* ESTILIZAÇÃO DO DROPDOWN INLINE FORM !!! */
+
+.inline-form-wrapper {
+    background-color: #262626;
+    border: 1px solid #4a4a4a;
+    border-radius: 10px;
+    padding: 38px 12px 12px 12px;
+    margin-bottom: 12px;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* botão de fechar (X) */
+.close-inline-form {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #444;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: background 0.2s;
+}
+
+.close-inline-form:hover {
+    background: #fb5f5f; /* fica vermelhinho ao passar o mouse */
+}
+
+/* estrutura do formulário interno */
+.inline-activity-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.inline-activity-form input,
+.inline-activity-form textarea {
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    color: #fff;
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 14px;
+    outline: none;
+}
+
+.inline-activity-form input::placeholder,
+.inline-activity-form textarea::placeholder {
+    color: #666;
+}
+
+/* linha com Dia e Hora lado a lado */
+.inline-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.inline-activity-form textarea {
+    min-height: 50px;
+    resize: none;
+}
+
+/* botão Salvar*/
+.submit-inline-btn {
+    background-color: #7b68ee;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.submit-inline-btn:hover {
+    background-color: #6a5acd;
+}
+
+/* NOVOS ESTILOS PARA APAGAR COMPONENTE !!! */
+
+.card-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.delete-card-btn {
+    background: transparent;
+    border: none;
+    color: #444;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 4px;
+    transition: color 0.2s;
+}
+
+.delete-card-btn:hover {
+    color: #fb5f5f;
 }
