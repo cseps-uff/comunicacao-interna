@@ -252,6 +252,7 @@ export default function TarefasPage() {
                         type="number"
                         min="1"
                         max="31"
+                        placeholder="Dia"
                         value={form.day}
                         onChange={(event) => setForm({ ...form, day: event.target.value })}
                         required
