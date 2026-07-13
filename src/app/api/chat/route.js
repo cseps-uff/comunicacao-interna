@@ -3,7 +3,9 @@ import { NextResponse } from 'next/server';
 export async function POST(request) {
   try {
     const { prompt } = await request.json();
-    const urlOllama = 'http://192.168.0.184:11435/api/chat';
+    // Mude de: 'http://192.168.0.184:11435/api/chat'
+    // Para o IP interno do Docker (Gateway):
+    const urlOllama = 'http://172.17.0.1:11435/api/chat';
 
     const response = await fetch(urlOllama, {
       method: 'POST',
