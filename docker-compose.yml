@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  site-comunicacao:
+    build: .
+    container_name: site-comunicacao
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
