@@ -70,3 +70,13 @@ As atividades criadas em **Tarefas** ficam salvas no `localStorage` do navegador
 - Permitir editar e excluir atividades.
 - Concluir a tela de dashboard.
 - Melhorar a experiência responsiva em telas menores.
+
+## Enquanto estiver rodando localmente na casa do Isac:
+  Se eu mexer no site, ele atualiza sozinho pelo robozinho?
+Quase sozinho! O robô do GitHub faz 90% do trabalho automaticamente. O fluxo agora é:
+
+  Você altera o código no seu computador pessoal e faz o Push para a main.
+
+O robozinho do GitHub Actions acorda e reconstrói a imagem Docker novinha em folha lá no GitHub Packages.
+
+O único passo manual: Como o Portainer não fica vigiando o GitHub por questão de segurança, quando o robô terminar (bolinha verde), você entra no Portainer, clica no seu container site-comunicacao-interna, clica no botão Recreate (Recriar), marca a chavinha "Pull latest image" e clica em Recreate. Em 5 segundos o site se atualiza no servidor.
